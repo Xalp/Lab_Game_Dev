@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83748fb41d67ae2438aba976d9be7485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marioLocation: {fileID: 1672758641}
 --- !u!58 &635754470
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1171,9 +1172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff0a1e22b3e4754eaac9d0ad00b3a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  upSpeed: 10
-  maxSpeed: 15
+  speed: 30
+  upSpeed: 20
+  maxSpeed: 20
   enemyLocation: {fileID: 635754466}
   scoreText: {fileID: 537069658}
 --- !u!212 &1672758640

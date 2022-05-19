@@ -73,8 +73,9 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         if (Mathf.Abs(moveHorizontal) > 0){
             Vector2 movement = new Vector2(moveHorizontal, 0);
+            float air = onGroundState?1f:0.75f;
             if (marioBody.velocity.magnitude < maxSpeed)
-                    marioBody.AddForce(movement * speed);
+                    marioBody.AddForce(movement * speed * air);
         }
         if (Input.GetKeyUp("a") && Input.GetKeyUp("d")){
             // stop
@@ -84,6 +85,9 @@ public class PlayerController : MonoBehaviour
             marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
             onGroundState = false;
             countScoreState = true; //check if Gomba is underneath
+        }
+        if (!onGroundState){
+            marioBody.AddForce(Vector2.down * 1f, ForceMode2D.Impulse);
         }
     }
 }
